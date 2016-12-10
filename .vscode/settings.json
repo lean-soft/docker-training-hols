@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "restructuredtext.confPath" : "./docs/conf.py",
+    "restructuredtext.builtDocumentationPath" : "./_build/html",
+    "restructuredtext.updateOnTextChanged" : "false"
+}
