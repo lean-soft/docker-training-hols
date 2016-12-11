@@ -6,7 +6,7 @@ Docker 运行环境的组成
 
 Docker 运行环境如下图，并由代码库，Docker主机(运行了docker daemon)的服务器和镜像仓库这3个最主要的部分组成。
 
-.. figure::images/docker-command-01-env.png
+.. figure:: images/docker-command-01-env.png
 
 代码库
     Git / SVN 等
