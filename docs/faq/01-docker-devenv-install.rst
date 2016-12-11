@@ -13,13 +13,14 @@
 
 .. figure:: images/docker-runner.png
 
-请点击这里 http://pan.baidu.com/s/1kU7wmA7 下载预装软件，密码：密码：tsts。
+其他需要的安装的工具如下，请点击这里 http://pan.baidu.com/s/1kU7wmA7 下载预装软件，密码：密码：tsts。
 
 文件列表：
 
 - cmder.zip
 - InstallDocker.msi 
 - VSCodeSetup-1.7.2.exe
+- Git-2.11.0-64-bit.exe
 
 安装Docker Toolbox
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,7 +38,7 @@
 
 .. figure:: images/docker-runner.png
 
-请点击这里 http://pan.baidu.com/s/1kU7wmA7 下载预装软件，密码：密码：tsts。
+其他需要的安装的工具如下，请点击这里 http://pan.baidu.com/s/1kU7wmA7 下载预装软件，密码：密码：tsts。
 
 文件列表：
 
@@ -45,3 +46,4 @@
 - DockerToolbox-1.12.3.exe
 - VirtualBox-5.1.10-112026-Win.exe
 - VSCodeSetup-1.7.2.exe
+- Git-2.11.0-64-bit.exe
