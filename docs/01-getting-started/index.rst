@@ -34,6 +34,7 @@ Docker 容器化主机
    :titlesonly:
 
    docker-commands
+   docker-build
    docker-machine-commands
    docker-compose-commands
    docker-registry

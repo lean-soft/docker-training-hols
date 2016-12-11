@@ -106,7 +106,61 @@
 
 .. figure:: images/docker-command-02-php-sample.png
 
+注意以上命令与之前的最大区别在于使用了-p参数来映射网络端口，这样我们就可以通过容器主机的8080端口来访问容器的80端口，类似于实现了一个简单的NAT。你也可以使用-P(大写)参数来让docker自动分配主机端口，这样可以避免我们手动分配端口造成冲突。
+
+你可以尝试使用以上实验中的docker logs和docker ps等命令查看此正在运行容器的状态和其中的web服务器所输出的日志，如下
+
+.. code-block:: shell
+
+    λ docker ps
+    CONTAINER ID        IMAGE                   COMMAND                CREATED                  STATUS              PORTS                  NAMES
+    dda5078bd856        training/php-sample:5   "apache2-foreground"   Less than a second ago   Up 2 seconds        0.0.0.0:8080->80/tcp   high_albattani
+
+运行以下命令式请注意替换dda5为你自己的容器id，同时可以尝试刷新浏览器看到日志的实时输出
+
+.. code-block:: shell
+
+    λ docker logs -f dda5
+    [Sun Dec 11 12:40:12.681308 2016] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.10 (Debian) PHP/7.0.13 configured -- resuming normal operations
+    [Sun Dec 11 12:40:12.681454 2016] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+    172.17.0.1 - - [11/Dec/2016:12:40:31 +0000] "GET / HTTP/1.1" 200 629 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+    172.17.0.1 - - [11/Dec/2016:12:40:38 +0000] "GET / HTTP/1.1" 200 629 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
 
 
+另外，你还可以使用docker top {id}命令查看容器中的进程列表
+
+.. code-block:: shell
+
+    λ docker top dda5
+    PID                 USER                TIME                COMMAND
+    4241                root                0:00                apache2 -DFOREGROUND
+    4262                xfs                 0:00                apache2 -DFOREGROUND
+    4263                xfs                 0:00                apache2 -DFOREGROUND
+    4264                xfs                 0:00                apache2 -DFOREGROUND
+    4265                xfs                 0:00                apache2 -DFOREGROUND
+    4266                xfs                 0:00                apache2 -DFOREGROUND
+    4300                xfs                 0:00                apache2 -DFOREGROUND
+    4302                xfs                 0:00                apache2 -DFOREGROUND
+
+或者通过 docker exec 命令直接进入容器进行操作
+
+.. code-block:: shell
+
+    λ docker exec -it dda5 bash
+    root@dda5078bd856:/var/www/html# pwd
+    /var/www/html
+    root@dda5078bd856:/var/www/html# ls -la
+    total 24
+    drwxr-xr-x 1 www-data www-data 4096 Dec  5 21:04 .
+    drwxr-xr-x 1 root     root     4096 Nov  8 23:22 ..
+    -rwxr-xr-x 1 root     root      573 Dec  6 03:19 index.php
+    -rwxr-xr-x 1 root     root     6452 Dec  6 03:04 small_h.png
+    -rwxr-xr-x 1 root     root       21 Dec  6 02:56 test.php
+
+
+小结
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+至此，你应该已经基本掌握了运行容器的主要命令，下一节中，我们将尝试完成一个新的容器镜像的构建并运行我们自己构建的容器镜像。
 
 
