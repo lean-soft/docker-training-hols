@@ -25,7 +25,7 @@
     $ docker run -t -i ubuntu /bin/bash
     root@af8bae53bdd3:/#
 
-在容器中持续任务并管理容器生命周期
+在容器中运行持续任务并管理容器生命周期
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用命令行运行以下命令，此命令将启动一个ubuntu容器并在其中持续运行echo hello world，启动后容器会持续输出hello world文本。
@@ -104,7 +104,9 @@
 
 完成后打开浏览器并导航到 http://localhost:8080，你应该可以看到类似以下页面
 
-.. figure:: images/docker-command-01-php-sample.png
+.. figure:: images/docker-command-02-php-sample.png
+
+
 
 
 
