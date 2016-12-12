@@ -11,7 +11,7 @@
     FOR /f "tokens=*" %i IN ('docker ps -a -q') DO docker rm %i
 
 
-准备容器开发环境
+01. 准备容器开发环境
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 在磁盘上建立docker-training目录，并在其中创建php-webapp目录，然后输入code .启动 Visual Studio Code 并打开php-webapp作为工作目录
@@ -29,7 +29,7 @@
 .. figure:: images/docker-build-01-vscode-folder.png
 
 
-创建项目代码
+02. 创建项目代码
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 分别创建以下文件
@@ -58,7 +58,7 @@
     FROM harbor.devopshub.cn/library/php:7.0-apache 
     COPY src/ /var/www/html/
 
-构建容器镜像
+03. 构建容器镜像
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 进入/docker-training/php-webapp目录，并执行命令完成容器镜像的构建
@@ -110,7 +110,7 @@
     php-webapp          1                   0996039f9f99        Less than a second ago   403 MB
 
 
-运行我们的容器镜像
+04. 运行我们的容器镜像
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 完成以上容器镜像构建后，我们就可以使用docker run来运行我们的应用了
@@ -124,7 +124,7 @@
 
 .. figure:: images/docker-build-01-run-container.png
 
-修改代码并重新打包并运行
+05. 修改代码并重新打包并运行
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 完成以上步骤后，你就可以按照日常开发的流程，修改代码，构建容器，运行容器来完成应用的开发和调试工作了。请注意在每次构建容器镜像的时候将标签号码增加或者设置为自己认为合适的值，这样便于你管理自己的容器镜像。重复几次构建后，再使用docker images php-webapp命令的效果应该类似如下输出。

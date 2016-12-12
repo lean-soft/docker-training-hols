@@ -5,7 +5,7 @@
 
 在这一节的实验中，我们将部署一个私有的容器镜像仓库并在不同的主机中进行部署。
 
-使用docker pull获取registry容器镜像
+01. 使用docker pull获取registry容器镜像
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 docker registry本身也是通过容器方式进行部署的，在docker hub上提供这个镜像，我们为了实验的方便讲此容器放置在了培训专用的仓库上，大家可以通过以下命令拉取这个镜像
@@ -23,7 +23,7 @@ docker registry本身也是通过容器方式进行部署的，在docker hub上�
     Digest: sha256:1152291c7f93a4ea2ddc95e46d142c31e743b6dd70e194af9e6ebe530f782c17
     Status: Downloaded newer image for harbor.devopshub.cn/library/registry:latest
 
-部署docker registry容器
+02. 部署docker registry容器
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用以下命令完成docker registry的本地部署
@@ -38,7 +38,7 @@ docker registry本身也是通过容器方式进行部署的，在docker hub上�
     475f75953235        harbor.devopshub.cn/library/registry   "/entrypoint.sh /e..."   Less than a second ago   Up 50 seconds       0.0.0.0:5000->5000/tcp   serene_noether
 
 
-向私有仓库推送镜像
+03. 向私有仓库推送镜像
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 为了能够将镜像推送到我们制定的仓库中，我们将借助docker tag命令来从新标识镜像，指定仓库地址并使用docker push命令完成推送。
@@ -69,7 +69,7 @@ docker registry本身也是通过容器方式进行部署的，在docker hub上�
 
 .. figure:: images/docker-registry-01-catalog.png
 
-从私有仓库中拉取镜像
+04. 从私有仓库中拉取镜像
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 你可以尝试使用以下命令删除本地的php-webapp:1这个镜像，然后再从刚才推送的仓库中拉取

@@ -5,7 +5,7 @@
 
 docker-machine就是docker工具集中提供的用来管理容器化主机的工具，用来管理运行在不同环境的主机，包括：本地虚拟机，远程虚拟机，公有云中的虚拟机都可以通过一个命令统一进行管理。
 
-在本地虚拟化环境中创建容器化主机
+01. 在本地虚拟化环境中创建容器化主机
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 以下操作可以在Windows操作系统上执行，根据你所使用的是Hyper-V或者Virtual Box你可以分别选择合适的命令创建主机
@@ -48,7 +48,7 @@ docker-machine就是docker工具集中提供的用来管理容器化主机的工
 
 如果以上命令执行失败，一般是因为下载boot2docker.iso这个文件失败造成的。你可以实现从培训网盘中下载这个文件并放置在 C:\Users\{用户名}\.docker\machine\cache 目录中，这样就可以避免下载动作。
 
-查看docker-machine列表并使用ssh连接
+02. 查看docker-machine列表并使用ssh连接
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 通过docker-machine创建的容器化主机会在你的计算机上保存记录，可以通过docker-machine ls这个命令查询到所有已经连接到当前计算机的容器化主机。你可以看到以下列表中，我有1台本地hyper-v中的主机和2台运行在微软Azure云中的主机都可以被我本地的docker-machine进行操作。
@@ -95,7 +95,7 @@ docker-machine就是docker工具集中提供的用来管理容器化主机的工
     docker@local-docker01:~$
 
 
-将docker工具链接到远程docker-machine主机
+03. 将docker工具链接到远程docker-machine主机
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 由于docker工具本身是通过rest api调用远程主机的docker daemon的接口实现操作，我们可以通过修改本地docker命令所链接的远程主机地址的方式来实现操作目标的切换，docker-machine给我们提供了简化的操作命令。通过 docker-machine env {主机名称} 就可以获取这些链接参数并配置docker工具。
@@ -129,7 +129,7 @@ docker-machine就是docker工具集中提供的用来管理容器化主机的工
 
 将本地docker命令链接到了local-docker01这台容器主机上，后面的docker ps操作所针对的就是这台主机了。
 
-docker-machine 的其他命令
+04. docker-machine 的其他命令
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 docker-machine还提供很多丰富的命令可以帮助你管理容器化主机的生命周期，如：

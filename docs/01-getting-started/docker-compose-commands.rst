@@ -5,7 +5,7 @@
 
 docker-compose就是这样一个工具，我们可以通过一个配置文件完成一个复杂应用(可能涉及多个容器)的配置，并使用同一的命令来启动这个预先配置好的部署。
 
-准备开发环境
+01. 准备开发环境
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 在之前创建的docker-training目录中创建一个叫做wordpress的子目录，并使用code .打开这个目录作为工作目录。
@@ -17,7 +17,7 @@ docker-compose就是这样一个工具，我们可以通过一个配置文件完
     λ cd wordpress\
     λ code .
 
-创建docker-compose.yml文件
+02. 创建docker-compose.yml文件
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用Visual Studio Code在wordpress目录中创建docker-compose.yml文件，并将以下内容复制进去保存。
@@ -46,7 +46,7 @@ docker-compose就是这样一个工具，我们可以通过一个配置文件完
           WORDPRESS_DB_HOST: db:3306
           WORDPRESS_DB_PASSWORD: wordpress
 
-启动部署
+03. 启动部署
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 配置文件编写完成后，我们在同一目录下就可以执行docker-compose up命令来启动这个部署了
@@ -70,7 +70,7 @@ docker-compose就是这样一个工具，我们可以通过一个配置文件完
     λ docker run -itd -e MYSQL_ROOT_PASSWORD=wordpress -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=wordpress --name db harbor.devopshub.cn/library/mysql:5.7
     λ docker run -itd --link db:mysql -p 8000:80 -e WORDPRESS_DB_PASSWORD=wordpress harbor.devopshub.cn/library/wordpress:latest
 
-其他docker-compose命令
+04. 其他docker-compose命令
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 docker-compose也提供了其他一些命令帮助你管理容器的生命周期，如：

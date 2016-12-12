@@ -1,38 +1,35 @@
 练习一：使用docker基本命令
 ~~~~~~~~~~~~~~~~~~~~~~
 
-实验准备
 
-运行pullimage.cmd来拉取ubuntu和php-sample这2个容器镜像。
-
-使用容器运行Hello World
+01. 使用容器运行Hello World
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用命令行运行以下命令，此命令将启动一个ubuntu的容器并在其中输出 Hello World文本，执行完毕后，容器自动退出。
 
 .. code-block:: shell
 
-    $ docker run ubuntu /bin/echo 'Hello world'
+    $ docker run harbor.devopshub.cn/library/ubuntu /bin/echo 'Hello world'
     Hello world
 
-与容器进行交互
+02. 与容器进行交互
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用命令行运行以下命令，此命令将启动一个ubuntu容器并在其中运行bash交互命令行界面，你可以尝试运行pwd，ls，ps等命令查看容器内环境，就如同远程操作一台服务器一样。
 
 .. code-block:: shell
 
-    $ docker run -t -i ubuntu /bin/bash
+    $ docker run -t -i harbor.devopshub.cn/library/ubuntu /bin/bash
     root@af8bae53bdd3:/#
 
-在容器中运行持续任务并管理容器生命周期
+03. 在容器中运行持续任务并管理容器生命周期
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用命令行运行以下命令，此命令将启动一个ubuntu容器并在其中持续运行echo hello world，启动后容器会持续输出hello world文本。
 
 .. code-block:: shell
 
-    $ docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
+    $ docker run -d harbor.devopshub.cn/library/ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
     1e5535038e285177d5214659a068137486f96ee5c2e85a4ac52dc83f2ebe4147
 
 注意当你运行以上命令后，命令行直接退出并没有持续输出hello world文本，这是因为我们使用了-d参数，这时容器在后台运行，你可以通过docker logs命令获取容器内的日志输出，注意替换c3a2为你的容器ID的前四位，如下：
@@ -92,14 +89,14 @@
     FOR /f "tokens=*" %i IN ('docker ps -a -q') DO docker rm %i
 
 
-运行web应用并通过浏览器访问
+04. 运行web应用并通过浏览器访问
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 使用命令行运行以下命令
 
 .. code-block:: shell
 
-    $ docker run -itd -p 8080:80 training/php-sample:5
+    $ docker run -itd -p 8080:80 harbor.devopshub.cn/training/php-sample:5
     fbf9012502229877066ad5e63a1be5727055243857927a1d36ede432d7c3cc20
 
 完成后打开浏览器并导航到 http://localhost:8080，你应该可以看到类似以下页面
