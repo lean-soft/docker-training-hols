@@ -60,8 +60,8 @@ docker默认要求使用https来连接镜像仓库，使用https需要我们配�
 
 在vi中按i输入以下内容
     { "insecure-registries":["harbor.devopshub.cn","localhost:5000"] }
-    按ESC退出编辑
-    按:wq存盘退出
+    
+按ESC退出编辑, 按:wq存盘退出
 
 .. code-block:: shell
 
