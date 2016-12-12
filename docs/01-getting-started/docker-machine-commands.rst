@@ -129,7 +129,6 @@ docker-machine就是docker工具集中提供的用来管理容器化主机的工
 
 将本地docker命令链接到了local-docker01这台容器主机上，后面的docker ps操作所针对的就是这台主机了。
 
-
 docker-machine 的其他命令
 ^^^^^^^^^^^^^^^^^^^^^^^^
 

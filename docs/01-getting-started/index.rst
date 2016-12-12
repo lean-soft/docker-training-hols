@@ -38,5 +38,6 @@ Docker 容器化主机
    docker-machine-commands
    docker-compose-commands
    docker-registry
+   docker-end-to-end
 
 
