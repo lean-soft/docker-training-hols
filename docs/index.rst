@@ -46,7 +46,6 @@ Docker所代表的容器化分布式数据中心运维方案同时也带来了�
     :titlesonly:
     
     01-getting-started/index
-    02-advanced/index
     03-common-challenges/index
     04-apahce-mesos/index
     05-container-devops/index
