@@ -22,7 +22,7 @@ Command:
 
     /bin/bash -c "for i in {1..5}; do echo MyFirstApp $i; sleep 1; done"
 
-.. figure:: images/03-simplejob-01-start.png
+.. figure:: images/03-simplejob-01-status.png
 
 然后单击Deploy 
 
