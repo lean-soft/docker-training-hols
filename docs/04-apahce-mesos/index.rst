@@ -11,11 +11,11 @@ Mesos是Apache下的开源分布式资源管理框架，它被称为是分布式
 
 .. figure:: images/acs-cluster-new.png
 
-本实验所使用的DCOS集群架构如下，为了演示用途，我们使用一个3节点的DCOS集群，其中包括
+本实验所使用的DCOS集群架构如下，为了演示用途，我们使用一个4节点的DCOS集群，其中包括
 
 - 1个master节点用于管理员连接操作
 - 1个公开的agent节点用于对外提供http服务
-- 1个私有的agent节点用于集群内部服务
+- 2个私有的agent节点用于集群内部服务
 
 .. figure:: images/dcos.png
 
@@ -25,5 +25,6 @@ Mesos是Apache下的开源分布式资源管理框架，它被称为是分布式
    :titlesonly:
 
    01-connect
-   02-run-simple-job
-   03-run-php-sample
+   02-get-mesos-info
+   03-run-simple-job
+   04-run-php-sample
